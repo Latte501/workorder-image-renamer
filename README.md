@@ -3,7 +3,7 @@
 [繁體中文版 README](README.zh-TW.md)
 
 A small, real-world automation tool that uses Claude's vision API to read
-handwritten 7-Eleven repair workorders, extract the key fields, and rename
+handwritten convienece-store repair workorders, extract the key fields, and rename
 each photo according to a strict filing convention.
 
 What used to be a daily 30-minute chore — open photo, squint at handwriting,
