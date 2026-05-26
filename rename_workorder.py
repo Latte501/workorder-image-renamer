@@ -10,15 +10,15 @@ subfolder; failures land in `error/`.
 
 ╔════════════════════════════════════════════════════════════════════╗
 ║ Filename pattern:                                                  ║
-║   {mmdd} 7-11{store}({fault} {repair_items}){repair_no}.jpg        ║
+║   {mmdd} convienece-store{store}({fault} {repair_items}){repair_no}.jpg        ║
 ║                                                                    ║
-║ Note: space (not hyphen) between mmdd and 7-11.                    ║
+║ Note: space (not hyphen) between mmdd and convienece-store.                    ║
 ╚════════════════════════════════════════════════════════════════════╝
 
 Examples:
-  0407 7-11Tonghua(NoCup)91430773.jpg
-  0403 7-11Shuilongyin(MidWBNotHot 32mm1 Solenoid1)91431308.jpg
-  0423 7-11Kaili(NoWater CopperJoint3)91434951.jpg
+  0407 convienece-storeTonghua(NoCup)91430773.jpg
+  0403 convienece-storeShuilongyin(MidWBNotHot 32mm1 Solenoid1)91431308.jpg
+  0423 convienece-storeKaili(NoWater CopperJoint3)91434951.jpg
 
 Run:
   Double-click the file                       → folder picker dialog
@@ -75,7 +75,7 @@ SUBFOLDER_ERROR = "error"
 LOG_FILE_NAME = "rename_log.txt"
 API_TIMEOUT_SEC = 90
 
-EXTRACTION_PROMPT = """這是一張 7-11 工程服務單。請從圖中辨識以下欄位，
+EXTRACTION_PROMPT = """這是一張 convienece-store 工程服務單。請從圖中辨識以下欄位，
 只回傳一個 JSON 物件，不要任何前綴後綴、markdown 標記或解釋文字。
 
 {
@@ -229,7 +229,7 @@ def clean_qty(v):
 def build_filename(fields):
     """
     Compose filename from extracted fields.
-    Pattern: {mmdd} 7-11{store}({fault} {item}{qty}...){repair_no}.jpg
+    Pattern: {mmdd} convienece-store{store}({fault} {item}{qty}...){repair_no}.jpg
     """
     mmdd = roc_to_mmdd(fields.get("stamp_date"))
     store = sanitize(fields.get("store_name"))
@@ -256,7 +256,7 @@ def build_filename(fields):
             parts.append(f"{name}{qty}")
 
     inner = f"{fault} {' '.join(parts)}".strip() if parts else fault
-    return f"{mmdd} 7-11{store}({inner}){repair_no}.jpg"
+    return f"{mmdd} convienece-store{store}({inner}){repair_no}.jpg"
 
 
 def find_unique_name(target_dir, base_name):
@@ -275,7 +275,7 @@ def find_unique_name(target_dir, base_name):
 
 def already_renamed(name):
     """Return True if filename already matches the renamed pattern."""
-    return bool(re.match(r"^\d{4} 7-11.+\(.+\)\d+(-\d+)?\.jpg$", name))
+    return bool(re.match(r"^\d{4} convienece-store.+\(.+\)\d+(-\d+)?\.jpg$", name))
 
 
 # ─────────────────── Main pipeline ───────────────────
