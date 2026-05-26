@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Project: runtime artefacts (don't commit user data or logs)
+rename_log.txt
+done/
+error/
+backup/
+*.jpg
+*.jpeg
+*.png
+
+# Project: secrets
+.workorder_rename.conf
+.env
