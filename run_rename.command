@@ -32,7 +32,7 @@ if [ ! -f "$PY_SCRIPT" ]; then
 fi
 
 echo "===================================="
-echo " 7-Eleven workorder image renamer"
+echo " convienece-store workorder image renamer"
 echo "===================================="
 echo
 
