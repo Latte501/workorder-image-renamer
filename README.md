@@ -16,14 +16,14 @@ photos need to be filed under a fixed naming convention so that they can be
 searched by date, store, and repair number:
 
 ```
-{mmdd} 7-11{store}({fault} {parts_used}){repair_no}.jpg
+{mmdd} convienece-store{store}({fault} {parts_used}){repair_no}.jpg
 ```
 
 Example:
 
 ```
-0407 7-11Tonghua(SingleCup)91430773.jpg
-0403 7-11Shuilongyin(MidWBNotHot 32mm1 Solenoid1)91431308.jpg
+0407 convienece-storeTonghua(SingleCup)91430773.jpg
+0403 convienece-storeShuilongyin(MidWBNotHot 32mm1 Solenoid1)91431308.jpg
 ```
 
 The information lives in five different positions on a paper form, in mixed
@@ -120,7 +120,7 @@ workorders/
 ## Naming spec (full detail)
 
 ```
-{mmdd} 7-11{store}({fault} {item1}{qty1} {item2}{qty2}...){repair_no}.jpg
+{mmdd} convienece-store{store}({fault} {item1}{qty1} {item2}{qty2}...){repair_no}.jpg
 ```
 
 | Field        | Source on the form                                | Example      |
@@ -133,7 +133,7 @@ workorders/
 
 Rules:
 
-- Single space (not hyphen) between `{mmdd}` and `7-11`. Internal `7-11`
+- Single space (not hyphen) between `{mmdd}` and `convienece-store`. Internal `convienece-store`
   keeps its hyphen.
 - When the repair-content table is empty, the parentheses contain only the
   fault description.
